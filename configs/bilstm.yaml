@@ -1,0 +1,22 @@
+# From-scratch BiLSTM. About 10 min on a T4.
+base: base.yaml
+name: bilstm
+model:
+  type: bilstm
+  emb_dim: 300
+  hidden_dim: 256
+  num_layers: 1
+  pooling: attention
+  dropout: 0.3
+  glove_path: null   # set to e.g. /kaggle/input/glove6b/glove.6B.300d.txt to initialise
+data:
+  min_freq: 2
+train:
+  epochs: 15
+  batch_size: 64
+  lr: 2.0e-3
+  weight_decay: 0.0
+  warmup_ratio: 0.05
+  max_grad_norm: 5.0
+  patience: 3
+  evals_per_epoch: 1

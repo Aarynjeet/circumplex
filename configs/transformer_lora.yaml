@@ -1,0 +1,16 @@
+# LoRA on roberta-base: encoder frozen; rank-8 adapters on query/value + the head.
+# LoRA needs a much higher LR than full fine-tuning (few parameters, starts at 0).
+base: transformer_full.yaml
+name: roberta_lora
+model:
+  lora:
+    enabled: true
+    r: 8
+    alpha: 16
+    dropout: 0.1
+    target_modules: [query, value]
+train:
+  epochs: 6
+  lr: 5.0e-4
+  weight_decay: 0.0
+  patience: 3

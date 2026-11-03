@@ -1,0 +1,8 @@
+# CPU smoke test for the LoRA path (same tiny offline model as smoke_transformer).
+base: smoke_transformer.yaml
+name: smoke_lora
+model:
+  lora:
+    enabled: true
+    r: 4
+    alpha: 8

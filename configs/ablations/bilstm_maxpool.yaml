@@ -1,0 +1,5 @@
+# Ablation: max pooling instead of attention pooling in the BiLSTM.
+base: ../bilstm.yaml
+name: abl_bilstm_maxpool
+model:
+  pooling: max

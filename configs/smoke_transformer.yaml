@@ -1,0 +1,11 @@
+# CPU smoke test for the transformer path, fully offline: a 2-layer, 32-dim BERT
+# with random weights and a WordPiece tokenizer trained on the 200 examples.
+# Real runs use configs/transformer_full.yaml on a GPU.
+base: smoke.yaml
+name: smoke_transformer
+model:
+  type: transformer
+  name: tiny-random
+  dropout: 0.1
+train:
+  lr: 1.0e-3

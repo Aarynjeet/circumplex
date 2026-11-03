@@ -1,0 +1,6 @@
+# Ablation: class-imbalance handling via BCE pos_weight = #neg / #pos (capped at 30).
+base: ../transformer_full.yaml
+name: abl_roberta_pos_weight
+train:
+  pos_weight: inverse_freq
+  pos_weight_cap: 30.0

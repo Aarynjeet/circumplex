@@ -1,0 +1,12 @@
+# Hugging Face Space (CPU) requirements. The Space installs this repo as a package.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.9.1
+transformers==4.57.1
+peft==0.17.1
+gradio==5.50.0
+huggingface-hub==0.36.2
+numpy==2.3.5
+pandas==3.0.5
+scikit-learn==1.7.2
+matplotlib==3.11.2
+PyYAML==6.0.3

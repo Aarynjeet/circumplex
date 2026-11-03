@@ -1,0 +1,70 @@
+{
+  "results": [
+    {
+      "C": 0.5,
+      "class_weight": null,
+      "dev_macro_f1_at_0.5": 0.24711175394384435,
+      "dev_macro_f1_tuned": 0.494049470080674
+    },
+    {
+      "C": 0.5,
+      "class_weight": "balanced",
+      "dev_macro_f1_at_0.5": 0.46782178042287603,
+      "dev_macro_f1_tuned": 0.5103553630424064
+    },
+    {
+      "C": 1.0,
+      "class_weight": null,
+      "dev_macro_f1_at_0.5": 0.2987588649952623,
+      "dev_macro_f1_tuned": 0.5130900371692253
+    },
+    {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "dev_macro_f1_at_0.5": 0.4833825065180764,
+      "dev_macro_f1_tuned": 0.5115180198910233
+    },
+    {
+      "C": 2.0,
+      "class_weight": null,
+      "dev_macro_f1_at_0.5": 0.32108646193707513,
+      "dev_macro_f1_tuned": 0.511023605012954
+    },
+    {
+      "C": 2.0,
+      "class_weight": "balanced",
+      "dev_macro_f1_at_0.5": 0.4872498643270951,
+      "dev_macro_f1_tuned": 0.5092544906867216
+    },
+    {
+      "C": 4.0,
+      "class_weight": null,
+      "dev_macro_f1_at_0.5": 0.3368884444822232,
+      "dev_macro_f1_tuned": 0.5038137837519255
+    },
+    {
+      "C": 4.0,
+      "class_weight": "balanced",
+      "dev_macro_f1_at_0.5": 0.48255681195393124,
+      "dev_macro_f1_tuned": 0.5022211169847076
+    },
+    {
+      "C": 8.0,
+      "class_weight": null,
+      "dev_macro_f1_at_0.5": 0.34579314870296546,
+      "dev_macro_f1_tuned": 0.49531689664788764
+    },
+    {
+      "C": 8.0,
+      "class_weight": "balanced",
+      "dev_macro_f1_at_0.5": 0.47438217152139767,
+      "dev_macro_f1_tuned": 0.4940084471117762
+    }
+  ],
+  "best": {
+    "C": 1.0,
+    "class_weight": null,
+    "dev_macro_f1_at_0.5": 0.2987588649952623,
+    "dev_macro_f1_tuned": 0.5130900371692253
+  }
+}

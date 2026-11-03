@@ -1,0 +1,26 @@
+# RQ5: vanilla roberta-base vs the GoEmotions fine-tuned encoder on thinking traps.
+# 2 inits x 4 fractions x 3 seeds = 24 small runs; about 30-45 min on a T4 in total.
+base: base.yaml
+name: transfer
+model:
+  type: transformer
+  name: roberta-base
+  dropout: 0.1
+data:
+  max_len: 96          # situation + thought can be longer than a Reddit comment
+train:
+  epochs: 20
+  batch_size: 16
+  lr: 3.0e-5
+  warmup_ratio: 0.1
+  patience: 5
+  evals_per_epoch: 1
+  amp: true
+transfer:
+  emotion_run: runs/roberta_full_s42   # a full fine-tuning run (LoRA runs also work)
+  fractions: [0.1, 0.25, 0.5, 1.0]
+  seeds: [0, 1, 2]
+  inits: [vanilla, emotion]
+  split_seed: 0
+output:
+  save_checkpoint: false

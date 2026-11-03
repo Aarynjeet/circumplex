@@ -1,0 +1,25 @@
+# CPU smoke test for the BiLSTM path: 200 train examples, a few steps. < 1 min.
+base: base.yaml
+name: smoke_bilstm
+data:
+  source: github   # skip the HF attempt; same official splits
+  subsample: 200
+  eval_subsample: 200
+  max_len: 32
+  min_freq: 1
+model:
+  type: bilstm
+  emb_dim: 32
+  hidden_dim: 32
+  pooling: attention
+  dropout: 0.1
+train:
+  epochs: 2
+  batch_size: 16
+  grad_accum_steps: 2   # exercise the accumulation branch
+  lr: 3.0e-3
+  max_steps: 10
+  evals_per_epoch: 2
+  patience: 10
+output:
+  n_bootstrap: 50

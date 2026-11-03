@@ -1,0 +1,10 @@
+# Shared defaults. Other configs say `base: base.yaml` and override what differs.
+seed: 42
+data:
+  source: auto        # Hugging Face first, official GitHub TSVs as fallback
+  cache_dir: data/cache
+  max_len: 64
+output:
+  runs_dir: runs
+  save_checkpoint: true
+  n_bootstrap: 1000

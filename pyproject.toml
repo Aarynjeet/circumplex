@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "circumplex"
+version = "0.1.0"
+description = "Emotion detection on GoEmotions in plain PyTorch, plus tests of whether models recover the circumplex structure of affect."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "SIM"]
+# N803/N806: allow capitalised matrix names (X, Y, C) as in the maths.
+# E501: the formatter owns line length; the remaining long lines are string literals.
+ignore = ["N803", "N806", "N812", "E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*" = ["E402", "E501", "F821"]  # get_ipython() is defined by IPython
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]
+markers = ["slow: trains tiny models on downloaded data (about 30 s)"]

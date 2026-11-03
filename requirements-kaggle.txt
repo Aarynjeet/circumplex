@@ -1,0 +1,9 @@
+# Installed on top of Kaggle's preinstalled stack. torch, numpy, pandas, scipy,
+# scikit-learn and matplotlib are NOT reinstalled (keeps Kaggle's CUDA build).
+# The HF stack is pinned because the code was tested against these versions.
+transformers==4.57.1
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+peft==0.17.1
+umap-learn==0.5.12
+PyYAML==6.0.3

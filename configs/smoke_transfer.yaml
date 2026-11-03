@@ -1,0 +1,17 @@
+# CPU smoke test for RQ5 using the tiny offline model trained by smoke_transformer.yaml.
+base: transfer.yaml
+name: smoke_transfer
+model:
+  name: tiny-random
+data:
+  subsample: 200
+train:
+  epochs: 2
+  max_steps: 4
+  batch_size: 16
+  lr: 1.0e-3
+  amp: false
+transfer:
+  emotion_run: runs/smoke_transformer
+  fractions: [0.5, 1.0]
+  seeds: [0]

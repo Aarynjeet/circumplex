@@ -1,0 +1,12 @@
+# Classical baseline: TF-IDF features + one-vs-rest logistic regression (CPU).
+base: base.yaml
+name: tfidf_lr
+baseline:
+  word_ngrams: [1, 2]
+  char_ngrams: [2, 5]     # char n-grams help with typos and slang
+  max_features_word: 100000
+  max_features_char: 100000
+  min_df: 2
+  sublinear_tf: true
+  C: 1.0                  # best on dev in scripts/tune_tfidf.py (see runs/tfidf_sweep.json)
+  class_weight: null      # "balanced" was within 0.002 dev macro-F1 once thresholds are tuned

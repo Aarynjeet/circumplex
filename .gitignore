@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# downloaded data (re-downloadable; some licenses forbid redistribution)
+data/cache/
+# derived from the NRC VAD lexicon at runtime (`make vad`); not redistributed
+data/emotion_vad.csv
+
+# run outputs: keep only the committed results summary
+runs/*
+!runs/README.md
+!runs/results_summary.json
+!runs/tfidf_sweep.json
+!runs/tfidf_lr/
+runs/tfidf_lr/*
+!runs/tfidf_lr/config.yaml
+!runs/tfidf_lr/metrics.json
+
+*.pt
+*.bin
+*.safetensors
+*.zip

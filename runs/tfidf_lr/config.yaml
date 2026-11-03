@@ -1,0 +1,67 @@
+name: tfidf_lr
+seed: 42
+data:
+  source: github
+  cache_dir: data/cache
+  max_len: 64
+  subsample: null
+  eval_subsample: null
+  min_freq: 2
+model:
+  type: transformer
+  name: roberta-base
+  dropout: 0.1
+  emb_dim: 300
+  hidden_dim: 256
+  num_layers: 1
+  pooling: attention
+  glove_path: null
+  lora:
+    enabled: false
+    r: 8
+    alpha: 16
+    dropout: 0.1
+    target_modules:
+    - query
+    - value
+train:
+  epochs: 4
+  batch_size: 32
+  eval_batch_size: 128
+  grad_accum_steps: 1
+  lr: 3.0e-05
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+  amp: true
+  patience: 2
+  evals_per_epoch: 1
+  max_steps: null
+  loss: bce
+  pos_weight: null
+  pos_weight_cap: 30.0
+  focal_gamma: 2.0
+  num_workers: 0
+output:
+  runs_dir: runs
+  save_checkpoint: true
+  n_bootstrap: 1000
+baseline:
+  word_ngrams:
+  - 1
+  - 2
+  char_ngrams:
+  - 2
+  - 5
+  max_features_word: 100000
+  max_features_char: 100000
+  min_df: 2
+  sublinear_tf: true
+  C: 1.0
+  class_weight: null
+transfer: {}
+_meta:
+  git_commit: db0c51fa8c70cde1a0d0f1b3433112d54ea52354-dirty
+  torch_version: 2.9.1+cu128
+  cuda: null
+  device: cpu

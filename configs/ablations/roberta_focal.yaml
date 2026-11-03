@@ -1,0 +1,6 @@
+# Ablation: focal loss (gamma = 2) instead of plain BCE.
+base: ../transformer_full.yaml
+name: abl_roberta_focal
+train:
+  loss: focal
+  focal_gamma: 2.0
