@@ -203,3 +203,9 @@ uses.
 - Sundararajan, M., Taly, A., & Yan, Q. (2017). *Axiomatic Attribution for Deep Networks.* ICML 2017.
 - Lin, T.-Y., Goyal, P., Girshick, R., He, K., & Dollár, P. (2017). *Focal Loss for Dense Object Detection.* ICCV 2017.
 - Mantel, N. (1967). *The detection of disease clustering and a generalized regression approach.* Cancer Research, 27(2), 209–220.
+
+## Licence
+
+Code: MIT (see [LICENSE](LICENSE)). The datasets and lexicon keep their own
+licences, listed under [Data and licences](#data-and-licences); none of them is
+redistributed here.

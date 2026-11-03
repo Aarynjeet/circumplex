@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Emotion detection on GoEmotions in plain PyTorch, plus tests of whether models recover the circumplex structure of affect."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "MIT" }  # see LICENSE
 
 [tool.setuptools.packages.find]
 where = ["src"]
